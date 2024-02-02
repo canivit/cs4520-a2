@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">Assignment1</string>
+    <!-- Strings related to login -->
+    <string name="prompt_username">Username</string>
+    <string name="prompt_password">Password</string>
+    <string name="login">Login</string>
+    <string name="invalid_username_or_password">Invalid username or password</string>
 </resources>
