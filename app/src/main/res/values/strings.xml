@@ -5,4 +5,10 @@
     <string name="prompt_password">Password</string>
     <string name="login">Login</string>
     <string name="invalid_username_or_password">Invalid username or password</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="image_of_product">Image of product</string>
+    <string name="default_product_name">Product Name</string>
+    <string name="default_product_expiry_date">2024-01-01</string>
+    <string name="default_product_price">$ 0</string>
 </resources>
