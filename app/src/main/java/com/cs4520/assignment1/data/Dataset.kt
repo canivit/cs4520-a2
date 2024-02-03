@@ -1,4 +1,21 @@
-package com.cs4520.assignment1
+package com.cs4520.assignment1.data
+
+fun getProducts(): List<Product> {
+    return productsDataset.map { fields -> createProduct(fields) }.toList()
+}
+
+fun createProduct(fields: List<Any?>): Product {
+    val name = fields[0] as String
+    val type = fields[1] as String
+    val price = fields[3] as Int
+
+    return if (type == "Food") {
+        val expiryDate = fields[2] as String
+        Food(name, price, expiryDate)
+    } else {
+        Equipment(name, price)
+    }
+}
 
 val productsDataset = listOf(
     listOf("Treadmill", "Equipment", null, 32),
