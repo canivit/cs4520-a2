@@ -5,6 +5,8 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
+import com.cs4520.assignment1.data.getProducts
 
 // TODO: Rename parameter arguments, choose names that match
 // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -34,7 +36,10 @@ class ProductListFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_product_list, container, false)
+        val view = inflater.inflate(R.layout.fragment_product_list, container, false)
+        val recyclerView = view.findViewById<RecyclerView>(R.id.product_list)
+        recyclerView.adapter = ProductAdapter(getProducts())
+        return view
     }
 
     companion object {
