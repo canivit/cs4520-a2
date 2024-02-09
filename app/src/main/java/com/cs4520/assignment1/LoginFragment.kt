@@ -5,31 +5,28 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Button
-import android.widget.EditText
 import android.widget.Toast
 import androidx.navigation.fragment.findNavController
+import com.cs4520.assignment1.databinding.FragmentLoginBinding
 
 class LoginFragment : Fragment() {
+    private lateinit var binding: FragmentLoginBinding
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_login, container, false)
+    ): View {
+        binding = FragmentLoginBinding.inflate(inflater, container, false)
+        return binding.root
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        setupLoginButton(view)
+        setupLoginButton()
     }
 
-    private fun setupLoginButton(view: View) {
-        val usernameField = view.findViewById<EditText>(R.id.username_field)
-        val passwordField = view.findViewById<EditText>(R.id.password_field)
-        val loginButton = view.findViewById<Button>(R.id.login_button)
-        loginButton.setOnClickListener {
-            val username = usernameField.text
-            val password = passwordField.text
+    private fun setupLoginButton() {
+        binding.loginButton.setOnClickListener {
+            val username = binding.usernameField.text
+            val password = binding.passwordField.text
             if ((username.toString() == "admin") && (password.toString() == "admin")) {
                 findNavController().navigate(R.id.action_loginFragment_to_productListFragment)
             } else {
